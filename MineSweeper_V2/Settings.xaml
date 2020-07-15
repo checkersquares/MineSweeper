@@ -1,0 +1,33 @@
+﻿<Window x:Name="wndSettings" x:Class="MineSweeper_V2.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MineSweeper_V2"
+        mc:Ignorable="d"
+        Title="Settings" Height="200" Width="300" ResizeMode="NoResize" Topmost="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="191*"/>
+            <ColumnDefinition Width="101*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label" Content="Difficulty" VerticalContentAlignment="Center" Padding="5,0"/>
+        <Label x:Name="label_Copy" Content="Fields" Grid.Row="2" VerticalContentAlignment="Center" Padding="5,0"/>
+        <Label x:Name="label_Copy1" Content="Bombs" Grid.Row="3" VerticalContentAlignment="Center" Padding="5,0"/>
+        <Label x:Name="label_Copy2" Content="Size" Grid.Row="1" VerticalContentAlignment="Center" Padding="5,0"/>
+        <Button x:Name="btnStart" Content="Start" Grid.Column="1" Grid.Row="5" Click="btnStart_Click"/>
+        <ComboBox x:Name="cbDifficulty" Grid.Column="1" SelectionChanged="cbDifficulty_SelectionChanged"/>
+        <TextBox x:Name="tbSize" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Size, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" TextChanged="tbSize_TextChanged" ToolTip="Max 25"/>
+        <TextBox x:Name="tbFields" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Fields, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="tbBombs" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Bombs, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" TextChanged="tbBombs_TextChanged" ToolTip="Max half of fields"/>
+
+    </Grid>
+</Window>
